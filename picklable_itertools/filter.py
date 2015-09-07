@@ -26,7 +26,7 @@ class ifilter(BaseFilter):
 
     def _keep(self, value):
         predicate = bool if self._predicate is None else self._predicate
-        return predicate(value, self._predicate_args)
+        return predicate(value, **self._predicate_args)
 
     def __next__(self):
         val = next(self._iter)
